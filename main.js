@@ -66,7 +66,7 @@ const posts = [
 // Gestire l'assenza dell'immagine profilo con un elemento di fallback che contiene le iniziali dell'utente (es. Luca Formicola > LF).
 // Al click su un pulsante "Mi Piace" di un post, incrementare il contatore di like al post e cambiare colore al testo del bottone.
 
-let postList = document.querySelector(".posts")
+let postList = document.querySelector(".posts-list")
 
 let postInfo = "";
 
@@ -106,4 +106,4 @@ console.log(postInfo);
 }
 
 //output html
-postList = postInfo;
+postList.innerHTML = postInfo;
