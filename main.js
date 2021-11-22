@@ -76,7 +76,7 @@ for (let i = 0; i < posts.length; i++) {
         <div class="post__header">
             <div class="post-meta">                    
                 <div class="post-meta__icon">
-                    <img class="profile-pic" src="${posts[i].author.image}" alt="${posts[i].author.name}">                    
+                    <img class="profile-pic" src="${posts[i].author.image}" alt="${initialsFallBack(posts[i].author.name)}">                    
                 </div>
             <div class="post-meta__data">
                 <div class="post-meta__author">${posts[i].author.name}</div>
@@ -104,6 +104,15 @@ for (let i = 0; i < posts.length; i++) {
 </div>`
 console.log(postInfo);
 }
-
 //output html
 postList.innerHTML = postInfo;
+
+const targetDate = new Date(posts.created);
+console.log(targetDate);
+
+
+// funzione per le iniziali
+function initialsFallBack(name) {
+    return name.replace(/[a-z]/g, '');
+}
+
